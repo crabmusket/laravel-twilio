@@ -107,6 +107,16 @@ class Twilio implements TwilioInterface
 
         return $this->twilio = new Services_Twilio($this->sid, $this->token, null, isset($http) ? $http : null);
     }
+    
+    /**
+     * @param string $from Set the phone number that will be used
+     *
+     * @return Twilio
+     */
+    public function setNumber(string $from)
+    {
+        $this->from = $from;
+    }
 
     /**
      * @param callable $callback
